@@ -7,7 +7,10 @@
   },
   "options": {
     "increments": true,
-    "timestamps": true,
+    "timestamps": [
+      "created_at",
+      "updated_at"
+    ],
     "comment": ""
   },
   "attributes": {
@@ -15,9 +18,20 @@
       "required": true,
       "type": "string"
     },
-    "description": {
+    "author": {
       "required": true,
-      "type": "text"
+      "type": "json"
+    },
+    "cover": {
+      "type": "string"
+    },
+    "publishDate": {
+      "required": true,
+      "type": "date"
+    },
+    "price": {
+      "type": "float",
+      "required": true
     }
   }
 }

@@ -8,16 +8,36 @@
         <script type="text/javascript" charset="utf-8">
     /* place for UI configuration */
     webix.ui({
-  rows:[
-      { view:"template", 
-        type:"header", template:"My App!" },
-      { view:"datatable", 
-        autoConfig:true, 
-        data:{
-          title:"My Fair Lady", year:1964, votes:533848, rating:8.9, rank:5
+    width:1200,
+    rows:[
+        {
+            view:"toolbar", elements:[
+                { view:"button", value:"Add", width:100 },
+                { view:"button", value:"Delete", width:100 }
+            ]
+        },
+        {
+            height:1020, cols:[
+                {
+                    view:"form", elements:[
+                        { view:"text", placeholder:"Name" },  
+                        { view:"text", placeholder:"Publish Date" },
+                        { view:"text", placeholder:"Author" },
+                        { view:"text", placeholder:"Price" }        
+                    ]
+                },
+                {
+                    view:"list", 
+                    template:"#Name# - #Author#", // which data to show
+                    select:true, //enables selection 
+                    height:400,
+                    data:[
+                        
+                    ]
+                }
+            ]
         }
-      }
-  ]
+    ]
 });
         </script>
     </body>
